@@ -1,4 +1,5 @@
 import Test.Hspec
+import Test.QuickCheck
 import Library hiding (main)
 
 main = hspec $ do
@@ -26,3 +27,10 @@ main = hspec $ do
     it "or [1,1,1]" $ enumerate (Or [v1,v1,v1]) `shouldBe` [0,1,2]
     it "or [1,2]" $ enumerate (Or [v1,v2]) `shouldBe` [0,1,2]
     it "and [2,3] = 6" $ enumerate (And [v2, v3]) `shouldBe` [0..5]
+    it "and [6,3] = 18" $ enumerate (And [And [v2, v3], v3]) `shouldBe` [0..17]
+
+  describe "calculateSize and enumerate" $ do
+    it "equal sizes" $ withMaxSuccess 3 $ property $ \x -> fromIntegral (calculateSize x) == length (enumerate x)
+
+instance Arbitrary Type where
+  arbitrary = oneof [fmap Or arbitrary, fmap And arbitrary]

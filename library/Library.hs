@@ -2,7 +2,7 @@
 
 module Library where
 
-data Type = Or [Type] | And [Type]
+data Type = Or [Type] | And [Type] deriving Show
 
 calculateSize :: Type -> Integer
 calculateSize (Or items) = sum $ fmap calculateSize items

@@ -22,4 +22,4 @@ test-suite test
   type: exitcode-stdio-1.0
   hs-source-dirs: test
   main-is: Test.hs
-  build-depends: hspec, lispor
+  build-depends: hspec, lispor, QuickCheck
