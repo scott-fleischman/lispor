@@ -7,7 +7,7 @@ Getting back to basics: learning how to count.
 distributionSizeSequence n
 ```
 
-Given a set of cardinality `n`, count the number of possible distributions for a lengths `[0..]`.
+Given a set of cardinality `n`, count the number of possible distributions for lengths `[0..]`.
 
 Example: Bits
 
@@ -46,9 +46,9 @@ and $ fmap (checkProp 7) [2..8]
 ```haskell
 [1,3,6,10,15,21,28,36,45,55,66,78,91,105,120,136,153,171,190,210,231,253,276,300,325,351,378,406,435,465,496,528,561,595,630,666,703,741,780,820,861,903,946,990,1035,1081,1128,1176,1225,1275,1326,1378
 ```
-[A000217](https://oeis.org/A000217)  Triangular numbers: a(n) = binomial(n+1,2) = n(n+1)/2 = 0 + 1 + 2 + ... + n.
-[A161680](https://oeis.org/A161680)  a(n) = binomial(n,2): number of size-2 subsets of {0,1,...,n} that contain no consecutive integers.
-[A105340](https://oeis.org/A105340)  a(n) = n*(n+1)/2 mod 2048.
+* [A000217](https://oeis.org/A000217)  Triangular numbers: a(n) = binomial(n+1,2) = n(n+1)/2 = 0 + 1 + 2 + ... + n.
+* [A161680](https://oeis.org/A161680)  a(n) = binomial(n,2): number of size-2 subsets of {0,1,...,n} that contain no consecutive integers.
+* [A105340](https://oeis.org/A105340)  a(n) = n*(n+1)/2 mod 2048.
 
 ### distributionSizeSequence 4
 ```haskell
