@@ -1,6 +1,6 @@
 {-# OPTIONS_GHC -Wincomplete-patterns #-}
 
-module Library where
+module OrAndVector where
 
 import qualified Data.Foldable as F
 import qualified Data.Set as S
@@ -38,5 +38,3 @@ enumerate (And items) =
 --   restSize = fromIntegral $ length rest
 --   rest = enumerate (And xs)
 --   current = enumerate x
-
-main = putStrLn "Hi"

@@ -1,2 +1,1 @@
-import qualified Library
-main = Library.main
+main = putStrLn "Hi"

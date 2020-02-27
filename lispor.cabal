@@ -4,22 +4,33 @@ version: 1.0
 
 common deps
   default-language: Haskell2010
-  build-depends: base, containers, vector
+  build-depends:
+      base
+    , containers
+    , vector
 
 library
   import: deps
   hs-source-dirs: library
-  exposed-modules: Library
+  exposed-modules:
+    Distribution
+    OrAndVector
 
 executable lispor
   import: deps
   hs-source-dirs: executable
   main-is: Main.hs
-  build-depends: base, lispor
+  build-depends: lispor
 
 test-suite test
   import: deps
   type: exitcode-stdio-1.0
   hs-source-dirs: test
   main-is: Test.hs
-  build-depends: hspec, lispor, QuickCheck, quickcheck-instances
+  other-modules:
+    TestOrAndVector
+  build-depends:
+      hspec
+    , lispor
+    , QuickCheck
+    , quickcheck-instances
